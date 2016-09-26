@@ -1,0 +1,193 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="favicon.ico" rel="shortcut icon">
+		<title>Fender Products</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="products.js"></script>
+		<script src="js/engine.js"></script>
+
+
+
+  </head>
+
+	<body class="u-blk-bg">
+	   <!-- Static navbar -->
+	  <nav class="navbar navbar-default navbar-static-top u-blk-bg">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+		      <a class="navbar-brand u-red-bg" href="products.html"><img src="img/fender-logo.png" class="logo" width=73 height=29 /></a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse navbar-nav">
+	          <ul class="nav navbar-nav">
+	            <li><a href="#">Products</a></li>
+	            <!-- <li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customize<span class="caret"></span></a>
+	              <ul class="dropdown-menu">
+      						<li><a href="tarzana.php" class="text-white">Tarzana</a></li>
+      						<li><a href="northridge.php" class="text-white">Northridge</a></li>
+      						<li><a href="koreatown.php" class="text-white">Koreatown</a></li>
+      						<li><a href="to.php" class="text-white">Thousand Oaks</a></li>
+      						<li><a href="slo.php" class="text-white">San Luis Obispo</a></li>
+      						<li><a href="sm.php" class="text-white">Santa Monica</a></li>
+	              </ul>
+	            </li> -->
+       	 <li><a href="about.php" class="text-white">Music</a></li>
+				<li><a href="contact.php" class="text-white">Play</a></li>
+				<li><a href="contact.php" class="text-white">Connect</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+
+    <section class="row content">
+      <div class="container u-white-bg">
+          <h1>Bass Guitars</h1>
+					<div>
+						<h2>Filters</h2>
+
+						<!-- Submenu: Filter Options -->
+						<div class="row filter">
+						  <ul>
+		            <li class="dropdown col-sm-1">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Series<span class="caret"></span></a>
+		              <ul class="dropdown-menu">
+										<li class="standard">Standard</li>
+										<li class="artist">Artist</li>
+										<li class="mounting_hardware">Mounting Hardware</li>
+										<li class="miscellaneous_parts">Miscellaneous Parts</li>
+										<li class="vintage_modified_models">Vintage Modified Models</li>
+										<li class="classic">Classic</li>
+										<li class="american_standard">American Standard</li>
+										<li class="knobs_kits_pickup_covers">Knobs Kits &amp; Pickup Covers</li>
+										<li class="pickguards_backplates">Pickguards &amp; Backplates</li>
+										<li class="plates_covers">Plates &amp Covers</li>
+		              </ul>
+		            </li>
+								<li class="dropdown col-sm-2"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product Type<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li class="guitar">Guitar</li>
+										<li class="guitar_and_bass_parts">Guitar &amp; Bass Parts</li>
+									</ul>
+								</li>
+	       	 			<li class="all col-sm-2"><a>Show All</a></li>
+		          </ul>
+					</div>
+					<!-- Submenu End -->
+
+					<!-- Product Grid -->
+					<div class="row products"></div>
+    </section>
+		<footer class="row">
+			<section class="container">
+				<div class="social_media col-sm-6 col-sm-offset-3">
+					<ul>
+						<li><a href="https://www.facebook.com/FenderGBI" class="fb" alt="Follow Us on Facebook"></a></li>
+						<li><a href="https://twitter.com/FenderGBI" class="twitter" alt="Follow us on Twitter"></a></li>
+						<li><a href="https://www.pinterest.com/fender/" class="pintrest" alt="Follow us on Pintrest"></a></li>
+						<li><a href="https://www.instagram.com/fender/" class="instagram" alt="Follow us on Instagram"></a></li>
+						<li><a href="https://www.youtube.com/user/fendermusical" class="youtube" alt="Subscribe to us on Youtube"></a></li>
+						<li><a href="https://plus.google.com/+fender" class="googleplus" alt="Follow Us on GooglePlus"></a></li>
+						<li><a href="http://officialfender.tumblr.com/g" class="tumblr" alt="Follow Us on Tumblr"></a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 col-sm-offset-3">
+					<form action="https://shop.fender.com/on/demandware.store/Sites-Fender-Site/en_US/Newsletter-SignUp/C895622356" method="post" id="newsletter_email">
+					<h3 class="u-white-text text-center">Newsletter</h3>
+					<div class="text-center">
+						<input class="input-text newsletterEmail required" id="newsletter_email" type="text" name="newsletter_email" value="" placeholder="Enter your email to join our newsletter">
+					 	<button type="submit" id="NewsletterSubmit" class="btn u-red-bg u-white-text">Sign Up</button>
+					</div>
+					</form>
+				</div>
+				<div class="row footerLinks">
+					<div class="col-sm-4 text-center">
+						<h3 class="u-white-text">Company</h3>
+							<ul class="u-white-text">
+								<li>About</li>
+								<li>Visitor Center</li>
+								<li>Careers</li>
+								<li>Newsroom</li>
+								<li>Community Outreachd</li>
+							</ul>
+					</div>
+					<div class="col-sm-4 text-center">
+						<h3 class="u-white-text">What We Create</h3>
+						<ul class="u-white-text">
+							<li>Electric Guitars</li>
+							<li>Electric Basses</li>
+							<li>Acoustic Guitars</li>
+							<li>Acoustic Basses</li>
+							<li>Bluegree &amp; Ukes</li>
+							<li>Guitar Amplifires</li>
+							<li>Bass Amplifires</li>
+							<li>Home &amp; Studio</li>
+							<li>Sound Systems</li>
+							<li>Parts</li>
+							<li>Accessories</li>
+							<li>Squier Guitars</li>
+							<li>Fender Mod Shop</li>
+							<li>Tuner iOS App</li>
+						</ul>
+					</div>
+					<div class="col-sm-4 text-center">
+						<h3 class="u-white-text">Customer Service</h3>
+						<ul class="u-white-text">
+							<li>Register your Fender</li>
+							<li>Support</li>
+							<li>Contact</li>
+							<li>Order Status</li>
+							<li>Store Policies</li>
+							<li>Catalogs &amp; Price List</li>
+							<li>Find a dealer</li>
+						</ul>
+					</div>
+				</div>
+
+
+			</section>
+
+		</footer>
+
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel"></h4>
+		      </div>
+		      <div class="modal-body">
+		        <img id="modal_image" />
+						<h4>Colors:</h4>
+						<ul></ul>
+						<h5>Series:</h5>
+						<p id="prodSeries"></p>
+						<h5>Product Type<p>
+						<p id="prodType"></p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,163 @@
+/***** Navigation *****/
+.navbar-brand {
+	width: 90px;
+	height: 90px;
+	text-align: center;
+	padding:0;
+}
+
+.navbar-brand img { margin: 30px auto; }
+
+button.navbar-toggle { margin-top: 28px; }
+
+.navbar-default {
+	border: none;
+	margin-bottom: 0;
+}
+
+.navbar-header .navbar-brand:hover { background-color: red; }
+
+.navbar-default .navbar-nav>li>a { color: #fff; }
+
+.navbar-default .navbar-nav>li>a:hover { color: #ccc; }
+/***** End Navigation *****/
+
+.content img {
+	width: auto;
+	height: 140px;
+	background-color: aliceblue;
+}
+
+.content img:hover {
+	cursor:pointer;
+}
+
+
+/********** Filter Styles ****************/
+.filter {
+	border-top: solid 1px #666;
+	border-bottom: solid 1px #666;
+	margin-bottom: 20px;;
+}
+
+.filter ul {
+	list-style: none;
+	padding: 0;
+}
+
+.filter li {
+	padding: 5px 0 5px 30px;
+	border-bottom: solid 1px #ccc;
+}
+
+.filter li:last-child {
+	border: none;
+}
+
+.filter li:hover { cursor: pointer;}
+
+.filter .dropdown li { padding: 10px 10px 10px 40px; }
+
+.filter li a {
+	color: #000;
+}
+
+.filter li a:hover { text-decoration: none; }
+
+/******** Filter Styles End *************/
+
+.content h3 { font-size: 12px;}
+
+.products { padding-bottom: 30px;}
+
+/*********** Footer *******************/
+footer ul {
+	list-style: none;
+	padding: 0;
+}
+.social_media {
+	background:url('../img/footer-social-icons.gif') no-repeat center center;
+	background-size: contain;
+}
+
+.social_media li a{
+	float: left;
+	width: 38px;
+	height: 50px;
+	margin-left: 26px;
+}
+
+.social_media li a.fb { margin-left: 37px;}
+.social_media li a.pintrest {margin-left: 35px;}
+
+.social_media li a.instagram,
+.social_media li a.twitter,
+.social_media li a.youtube {margin-left: 32px;}
+
+.social_media li a.pintrest { margin-left: 29px;}
+
+.social_media li a.tumblr {margin-left: 15px;}
+
+.newsletterEmail {
+	width: 60%;
+	border-radius: .3em;
+	padding: 10px;
+	font-size: 14px;
+	color: #666;
+}
+
+footer .btn { height: 44px;}
+
+footer .footerLinks {
+	text-transform: uppercase;
+}
+/************ Footer End **************/
+
+footer .btn:hover,
+nav .navbar-brand:hover { background: #e1382b; }
+
+footer .btn:hover { color: #fff;}
+
+/******************************
+*********** Utilites **********
+******************************/
+
+.u-blk-bg {
+	background-color: #000;
+}
+
+.u-white-bg {
+	background-color: #fff;
+}
+
+.u-red-bg {
+		background-color: #d52b1e;
+}
+
+.u-white-text {
+	color: #fff;
+}
+
+.u-grey-text {
+	color: #ccc;
+}
+
+
+@media screen and (min-width: 768px) {
+	nav .navbar-nav li {
+		margin-top: 20px;
+	}
+	.content h3 { font-size: 11px;}
+
+	.filter li {
+		border: none;
+		padding-left: 10px;
+	}
+
+	.filter .dropdown li { padding-left: 10px;}
+
+}
+
+@media screen and (min-width: 1025px) {
+
+}
