@@ -198,7 +198,6 @@ $('.all').on('click', function(){
   el.empty();
   buildProducts(doc);
   imageListener();
-
 })
 
 
@@ -215,6 +214,7 @@ $('img').on('click',function(){
       document.getElementById('myModalLabel').innerHTML = modal.skuDisplayName_en[0].split(',')[0];
       document.getElementById('prodSeries').innerHTML = modal.series;
       document.getElementById('prodType').innerHTML = modal.productType;
+      document.getElementById('brand').innerHTML = modal.brand;
     }
   }
 })
