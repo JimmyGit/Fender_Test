@@ -1,4 +1,5 @@
 var filter = [];
+var products = $('.products');
 
 
 //Create product container
@@ -29,11 +30,33 @@ for (var i=0; i < inv; i++) {
 
   //Display on Page
   $('.products').append(div);
+  imageListener();
 }
 };
 
+//Modal
+function imageListener() {
+$('img').on('click',function(){
+  var id = this.getAttribute('data-id');
+
+  for (var i=0; i < doc.documents.length; i++) {
+    if (doc.documents[i].productNo == id) {
+      var modal = doc.documents[i];
+
+      document.getElementById('modal_image').setAttribute('src', modal.images[0]);
+      document.getElementById('myModalLabel').innerHTML = modal.skuDisplayName_en[0].split(',')[0];
+      document.getElementById('prodSeries').innerHTML = modal.series;
+      document.getElementById('prodType').innerHTML = modal.productType;
+      document.getElementById('brand').innerHTML = modal.brand;
+    }
+  }
+})
+};
+
+
 // Filtering Products
 function filteredProducts() {
+$('.products').empty();
 var inv = filter.length;
 for (var i=0; i < inv; i++) {
 
@@ -58,171 +81,44 @@ for (var i=0; i < inv; i++) {
 
   //Display on Page
   $('.products').append(div);
+  imageListener();
 }
 };
 
-$('document').ready(function(){
-  var el = $('.products');
-  buildProducts();
-  imageListener();
-
-//Filters Start
-
-//ProductType Filters Start
-$('.guitar').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.productType == "Guitars";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.guitar_and_bass_parts').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.productType == "Guitar and Bass Parts";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-//ProductType Filters End
-
-
-//Series Filters Start
-$('.standard').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.series == "Standard";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.artist').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.series == "Artist";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.mounting_hardware').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.series == "Mounting Hardware";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.miscellaneous_parts').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.series == "Miscellaneous Parts";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.vintage_modified_models').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.series == "Vintage Modified Models";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.classic').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.series == "Classic";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.american_standard').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.series == "American Standard";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.knobs_kits_pickup_covers').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.seriesId == "knobs_kits_pickup_covers";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.pickguards_backplates').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.seriesId == "pickguards_backplates";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-$('.plates_covers').on('click', function(){
-  el.empty();
-  filter =
-  doc.documents.filter(function(item) {
-    return item.seriesId == "plates_covers";
-  });
-  filteredProducts(filter);
-  imageListener();
-});
-
-//Series Filters End
-
-$('.all').on('click', function(){
-  el.empty();
-  buildProducts(doc);
-  imageListener();
-})
-
-
-//Modal
-function imageListener() {
-$('img').on('click',function(){
-  var id = this.getAttribute('data-id');
-
-  for (var i=0; i < doc.documents.length; i++) {
-    if (doc.documents[i].productNo == id) {
-      var modal = doc.documents[i];
-      console.log(modal);
-      document.getElementById('modal_image').setAttribute('src', modal.images[0]);
-      document.getElementById('myModalLabel').innerHTML = modal.skuDisplayName_en[0].split(',')[0];
-      document.getElementById('prodSeries').innerHTML = modal.series;
-      document.getElementById('prodType').innerHTML = modal.productType;
-      document.getElementById('brand').innerHTML = modal.brand;
-    }
+//Filter search Series and All
+function filterSeries() {
+  $('.series.filterLink').on('click', function(){
+  var category = this.getAttribute('data-id');
+  if (category == 'all') {
+    buildProducts();
   }
-})
+
+  else
+  {
+    console.dir(category);
+    filter = doc.documents.filter(function(item) {
+      return item.series == category;
+    });
+    filteredProducts(filter);
+  }
+
+});
+}
+
+//Filter search Product Type
+function filterProductType() {
+  $('.product.filterLink').on('click', function(){
+  var category = this.getAttribute('data-id');
+    filter = doc.documents.filter(function(item) {
+      return item.productType == category;
+    });
+    filteredProducts(filter);
+});
 }
 
 
-
-
-
-
+$('document').ready(function(){
+  buildProducts();
+  filterSeries();
+  filterProductType();
 });
