@@ -90,12 +90,12 @@ function filterSeries() {
   $('.series.filterLink').on('click', function(){
   var category = this.getAttribute('data-id');
   if (category == 'all') {
+    $('.products').empty();
     buildProducts();
   }
 
   else
   {
-    console.dir(category);
     filter = doc.documents.filter(function(item) {
       return item.series == category;
     });
